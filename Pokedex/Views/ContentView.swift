@@ -78,11 +78,15 @@ struct PokemonItemDetails:View {
     var body: some View {
         HStack {
             PokemonItemLeft(pokemon: pokemon)
+                .frame(width: UIScreen.main.bounds.width * 0.6)
             Spacer()
             PokemonItemRight(pokemon: pokemon)
+                .frame(width: UIScreen.main.bounds.width * 0.3)
         }
     }
 }
+
+
 
 struct PokemonItemLeft: View {
     let pokemon: ApiNetwork.Pokemon
@@ -90,7 +94,7 @@ struct PokemonItemLeft: View {
         VStack() {
             if let id = pokemon.details?.id {
                 Text(formatPokemonID(id))
-                    .font(.caption)
+                    .font(.callout)
                     .foregroundColor(Color.pokemonId)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -112,7 +116,7 @@ struct PokemonItemLeft: View {
                                .scaledToFit()
                                .frame(width: 15, height: 15)
                            Text(type.type.name.capitalized).foregroundColor(.white)
-                       }.padding(2).background(colorForPokemonType(type: type.type.name)).bold().cornerRadius(5)
+                       }.padding(6).background(colorForPokemonType(type: type.type.name)).bold().cornerRadius(5)
                    }
                }
             }.frame(maxWidth: .infinity, alignment: .leading)

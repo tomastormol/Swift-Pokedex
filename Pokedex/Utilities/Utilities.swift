@@ -35,10 +35,12 @@ func colorForPokemonBackground(type: String) -> Color {
         "rock": Color(red: 186/255, green: 171/255, blue: 130/255),
         "ghost": Color(red: 85/255, green: 106/255, blue: 174/255),
         "ice": Color(red: 97/255, green: 206/255, blue: 192/255),
-        "dragon": Color(red: 15/255, green: 106/255, blue: 192/255)
+        "dragon": Color(red: 15/255, green: 106/255, blue: 192/255),
+        "steel": Color(red: 76/255, green: 145/255, blue: 178/255),
+        "dark": Color(red: 111/255, green: 110/255, blue: 120/255),
     ]
     
-    return cardColors[type] ?? Color.gray // Devuelve gris si el tipo no está encontrado
+    return cardColors[type] ?? Color.white // Devuelve gris si el tipo no está encontrado
 }
 
 func colorForPokemonType(type: String) -> Color {
@@ -58,10 +60,12 @@ func colorForPokemonType(type: String) -> Color {
         "rock": Color(red: 212/255, green: 194/255, blue: 148/255),
         "ghost": Color(red: 133/255, green: 113/255, blue: 190/255),
         "ice": Color(red: 145/255, green: 216/255, blue: 223/255),
-        "dragon": Color(red: 115/255, green: 131/255, blue: 185/255)
+        "dragon": Color(red: 115/255, green: 131/255, blue: 185/255),
+        "steel": Color(red: 65/255, green: 125/255, blue: 154/255),
+        "dark": Color(red: 88/255, green: 87/255, blue: 95/255)
     ]
     
-    return typeColors[type] ?? Color.gray
+    return typeColors[type] ?? Color.white
 }
 
 func switchTypeImage(type: String) -> Image {
@@ -82,6 +86,8 @@ func switchTypeImage(type: String) -> Image {
         "ghost": Image("ghost"),
         "ice": Image("ice"),
         "dragon": Image("dragon"),
+        "steel": Image("steel"),
+        "dark": Image("dark")
         ]
         
         return typeImages[type] ?? Image(systemName: "square")
