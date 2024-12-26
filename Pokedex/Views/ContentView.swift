@@ -13,8 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            FiltersPokemon()
             SearchPokemon(pokemonName: $pokemonName)
-
             PokemonsList(viewModel: viewModel)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -22,6 +22,12 @@ struct ContentView: View {
         .task {
             await viewModel.fetchPokemons()
         }
+    }
+}
+
+struct FiltersPokemon:View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
     }
 }
 
