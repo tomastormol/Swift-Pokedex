@@ -35,7 +35,7 @@ class ApiNetwork{
     }
     
     func getPokemons() async throws -> Wrapper{
-        let PokemonURL = "https://pokeapi.co/api/v2/pokemon?limit=210&offset=0"
+        let PokemonURL = "https://pokeapi.co/api/v2/pokemon?limit=40&offset=0"
         let url = URL(string: PokemonURL)!
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(Wrapper.self, from: data)
